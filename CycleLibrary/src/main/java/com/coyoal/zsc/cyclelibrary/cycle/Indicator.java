@@ -48,8 +48,4 @@ public class Indicator extends LinearLayout {
         mDots.get(pos).full();
         lastPos = pos;
     }
-
-    public int getCurrentItem() {
-        return lastPos;
-    }
 }

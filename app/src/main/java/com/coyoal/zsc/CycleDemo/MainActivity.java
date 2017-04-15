@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.coyoal.zsc.cyclelibrary.cycle.CyclePager;
+import com.coyoal.zsc.cyclelibrary.cycle.adapter.CycleAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,12 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void initPager() {
         pager = (CyclePager) findViewById(R.id.pager);
-        List<String> data = new ArrayList<>();
-        //没有添加图片加载框架, 只设置轮播图的背景色
-        data.add("");
-        data.add("");
-        data.add("");
-        data.add("");
-        pager.setData(data);
+        CustomAdapter adapter = new CustomAdapter(this);
+        pager.setAdapter(adapter);
+        pager.setLoop(true);
     }
 }
